@@ -55,24 +55,7 @@ data/
   tasks.json              # The data store itself
 ```
 
-## Deploying (Vercel)
-1. Push this repo to GitHub
-2. Import it at vercel.com → New Project
-3. No environment variables needed
-4. Deploy
 
-**Note on persistence in production:** Vercel's filesystem is read-only/ephemeral at runtime, so writes to `data/tasks.json` won't persist between deployments or across serverless invocations in production the way they do locally. For this assessment's purposes the app is fully functional locally and the write-to-JSON approach satisfies the "local JSON db" option in the spec. If persistent hosting is needed later, swapping `src/lib/storage.ts` for a hosted KV/DB call is the only file that would need to change — the API routes and everything above them are already storage-agnostic.
 
-## Suggested commit history
-If you're building this out commit-by-commit rather than all at once, a sequence like this keeps the history readable:
-```
-feat: scaffold Next.js app with TypeScript and Tailwind
-feat: add shared Task types and JSON file storage layer
-feat: add task API routes (list, create, get, update, delete)
-feat: add reusable UI component library
-feat: add Zustand store and task list page with search/filter/pagination
-feat: add create and edit task forms
-feat: add dark mode toggle
-test: add unit tests for task validation
-docs: add README with setup and deploy instructions
-```
+
+
